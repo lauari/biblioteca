@@ -1,3 +1,4 @@
+
 package com.biblioteca.biblioteca.interfaceService;
 
 import java.util.List;
@@ -7,15 +8,11 @@ import com.biblioteca.biblioteca.models.libro;
 
 public interface ilibroService {
 
-    public String save(libro libro);
-
+    public String save(libro libro);    
     public List<libro> findAll();
-
-    public List<libro> libroExist(String Título, String Autor, String Genero);
-
     public Optional<libro> findOne(String id);
-
-    //cambiar el int
     public int delete(String id);
+    public List<libro> filtroLibros(String filtro);
+    public Object findById(String id);
 
 }

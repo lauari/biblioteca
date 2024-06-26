@@ -19,72 +19,29 @@ function listaLibro() {
                 var celdaId = document.createElement("td");
                 var celdaTitulo = document.createElement("td");
                 var celdaAutor = document.createElement("td");
-                var celdaGenero = document.createElement("td");
                 var celdaIsbn = document.createElement("td");
+                var celdaGenero = document.createElement("td");
                 var celdanumEjemdisponibles = document.createElement("td");
                 var celdanumEjemocupados = document.createElement("td");
                 var celdaAcciones = document.createElement("td");
 
                 // Asignar valores a las celdas
-                celdaId.innerText = libro.id;  // Asegúrate de que el campo id sea correcto
+                celdaId.innerText = libro.idLibro;  // Asegúrate de que el campo id sea correcto
                 celdaTitulo.innerText = libro.titulo;
                 celdaAutor.innerText = libro.autor;
-                celdaGenero.innerText = libro.genero;
                 celdaIsbn.innerText = libro.isbn;
+                celdaGenero.innerText = libro.genero;
                 celdanumEjemdisponibles.innerText = libro.numEjemdisponibles;  // Asegúrate de que el campo sea correcto
                 celdanumEjemocupados.innerText = libro.numEjemocupados;  // Asegúrate de que el campo sea correcto
 
-                // Crear botones de acción
-                var botonActualizarLibro = document.createElement("button");
-                botonActualizarLibro.innerText = "Actualizar";
-                botonActualizarLibro.className = "btn btn-warning actualizar_Libro";
-                botonActualizarLibro.onclick = function () {
-                    $('#modalLibro').modal('show');
-                    consultarLibroID(libro.id);  // Asegúrate de que estás pasando el ID correcto
-                };
 
-                var botonEliminar = document.createElement("button");
-                botonEliminar.innerText = "Eliminar";
-                botonEliminar.className = "btn btn-danger eliminar";
-                botonEliminar.onclick = function () {
-                    Swal.fire({
-                        title: '¿Estás seguro?',
-                        text: "¡No podrás revertir esto!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Sí, eliminarlo'
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            eliminarLibro(libro.id);  // Asegúrate de que estás pasando el ID correcto
-                        }
-                    });
-                };
-
-                var botonDetalles = document.createElement("button");
-                botonDetalles.innerText = "Detalles";
-                botonDetalles.className = "btn btn-primary detalles_libro";
-                botonDetalles.onclick = function () {
-                    mostrarDetallesLibro(libro);
-                };
-
-                // Contenedor para los botones
-                var divBotones = document.createElement("div");
-                divBotones.className = "btn-group";
-                divBotones.appendChild(botonActualizarLibro);
-                divBotones.appendChild(botonEliminar);
-                divBotones.appendChild(botonDetalles);
-
-                // Añadir el contenedor de botones a la celda de acciones
-                celdaAcciones.appendChild(divBotones);
 
                 // Añadir celdas al registro
                 trRegistro.appendChild(celdaId);
                 trRegistro.appendChild(celdaTitulo);
                 trRegistro.appendChild(celdaAutor);
-                trRegistro.appendChild(celdaGenero);
                 trRegistro.appendChild(celdaIsbn);
+                trRegistro.appendChild(celdaGenero);
                 trRegistro.appendChild(celdanumEjemdisponibles);
                 trRegistro.appendChild(celdanumEjemocupados);
                 trRegistro.appendChild(celdaAcciones);
@@ -151,3 +108,9 @@ function limpiarFormulario() {
     document.getElementById("numEjemdisponibles").value = "";
     document.getElementById("numEjemocupados").value = "";
 }
+
+
+
+
+
+

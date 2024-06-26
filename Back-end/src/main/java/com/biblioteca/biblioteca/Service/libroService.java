@@ -1,3 +1,6 @@
+
+
+
 package com.biblioteca.biblioteca.Service;
 
 import java.util.List;
@@ -35,12 +38,6 @@ public class libroService implements ilibroService {
         return libro;
     }
 
-    
-    @Override
-    public List<libro> libroExist(String título, String autor, String genero) {
-            List<libro> listalLibro =data.libroExist(título, autor, genero);
-            return listalLibro;
-    }
 
     @Override
     public int delete(String id) {
@@ -48,4 +45,25 @@ public class libroService implements ilibroService {
         return 1;
     }
 
+    @Override
+    public List<libro> filtroLibros(String filtro) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'filtroLibros'");
+    }
+
+    @Override
+    public Object findById(String id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+    }
+
+  
 }
+
+
+
+
+
+
+
+

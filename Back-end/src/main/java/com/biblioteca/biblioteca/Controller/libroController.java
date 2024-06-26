@@ -51,19 +51,25 @@ public class libroController {
         return new ResponseEntity<>(libro, HttpStatus.OK);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/")
+    public ResponseEntity<Object> findAll(){
+        var Libro =libroService.findAll();
+        return new ResponseEntity<>(Libro, HttpStatus.OK);
+    }
+
+    @GetMapping("/{idLibro}")
     public ResponseEntity<Object> findOne(@PathVariable String id) {
         var libro = libroService.findOne(id);
         return new ResponseEntity<>(libro, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{idLibro}")
     public ResponseEntity<Object> delete(@PathVariable String id) {
         libroService.delete(id);
         return new ResponseEntity<>("Registro eliminado", HttpStatus.OK);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{idLibro}")
     public ResponseEntity<Object> update(@PathVariable String id, @ModelAttribute("libro") libro libroUpdate){
         var libro= libroService.findOne(id).get();
 
