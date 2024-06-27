@@ -23,7 +23,7 @@ function listaLibro() {
                 var celdaGenero = document.createElement("td");
                 var celdanumEjemdisponibles = document.createElement("td");
                 var celdanumEjemocupados = document.createElement("td");
-                var celdaAcciones = document.createElement("td");
+                var celdaOpciones = document.createElement("td");
 
                 // Asignar valores a las celdas
                 celdaId.innerText = libro.idLibro;  // Asegúrate de que el campo id sea correcto
@@ -34,8 +34,7 @@ function listaLibro() {
                 celdanumEjemdisponibles.innerText = libro.numEjemdisponibles;  // Asegúrate de que el campo sea correcto
                 celdanumEjemocupados.innerText = libro.numEjemocupados;  // Asegúrate de que el campo sea correcto
 
-
-
+                
                 // Añadir celdas al registro
                 trRegistro.appendChild(celdaId);
                 trRegistro.appendChild(celdaTitulo);
@@ -44,7 +43,7 @@ function listaLibro() {
                 trRegistro.appendChild(celdaGenero);
                 trRegistro.appendChild(celdanumEjemdisponibles);
                 trRegistro.appendChild(celdanumEjemocupados);
-                trRegistro.appendChild(celdaAcciones);
+                trRegistro.appendChild(celdaOpciones);
 
                 // Añadir el registro a la tabla
                 cuerpoTabla.appendChild(trRegistro);
@@ -108,9 +107,4 @@ function limpiarFormulario() {
     document.getElementById("numEjemdisponibles").value = "";
     document.getElementById("numEjemocupados").value = "";
 }
-
-
-
-
-
 

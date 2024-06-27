@@ -49,5 +49,17 @@ public class usuarioService implements iusuarioService {
         return 1;
     }
 
+     @Override
+    public List<usuario> filtroUsuarios(String filtro) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'filtroLibros'");
+    }
+
+    @Override
+    public Object findById(String id) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'findById'");
+    }
+
 
 }

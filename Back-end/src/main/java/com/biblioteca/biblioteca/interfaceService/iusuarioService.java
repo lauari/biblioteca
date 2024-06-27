@@ -17,5 +17,7 @@ public interface iusuarioService {
     //cambiar el int
     public int delete(String id);
 
+    public List<usuario> filtroUsuarios(String filtro);
 
+    public Object findById(String id);
 }

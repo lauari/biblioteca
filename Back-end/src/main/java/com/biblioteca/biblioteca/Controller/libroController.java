@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioteca.biblioteca.interfaceService.ilibroService;
 import com.biblioteca.biblioteca.models.libro;
-import lombok.var;
+
 
 @RestController
 @RequestMapping("/api/v1/libro")

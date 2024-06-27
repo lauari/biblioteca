@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.biblioteca.biblioteca.interfaceService.iusuarioService;
 import com.biblioteca.biblioteca.models.usuario;
-import lombok.var;
+
 
 @RestController
 @RequestMapping("/api/v1/usuario")
@@ -50,20 +50,25 @@ public class usuarioController {
         usuarioService.save(usuario);
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
+    @GetMapping("/")
+    public ResponseEntity<Object> findAll(){
+        var usuario = usuarioService.findAll();
+        return new ResponseEntity<>(usuario, HttpStatus.OK);
+    }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{idUsuario}")
     public ResponseEntity<Object> findOne(@PathVariable String id) {
         var usuario = usuarioService.findOne(id);
         return new ResponseEntity<>(usuario, HttpStatus.OK);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{idUsuario}")
     public ResponseEntity<Object> delete(@PathVariable String id) {
         usuarioService.delete(id);
         return new ResponseEntity<>("Registro eliminado", HttpStatus.OK);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{idUsuario}")
     public ResponseEntity<Object> update(@PathVariable String id, @ModelAttribute("usuario") usuario usuarioUpdate){
         var usuario = usuarioService.findOne(id).get();
 
